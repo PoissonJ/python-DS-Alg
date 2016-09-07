@@ -13,8 +13,9 @@ class LinkedList(object):
 
         print 'Traversing...'
         while currentNode is not None:
-            print("%d " % currentNode.data)
+            print currentNode.data,
             currentNode = currentNode.nextNode
+        print
 
     # O(1)
     def insertStart(self, data):

@@ -35,6 +35,13 @@ class Node(object):
                     tempNode = self.rightChild
 
                 parentNode.leftChild = tempNode
+            elif parentNode.rightChild == self:
+                if self.leftChild is not None:
+                    tempNode = self.leftChild
+                else:
+                    tempNode = self.rightChild
+
+                parentNode.rightChild = tempNode
 
     def getMin(self):
         if self.leftChild is None:

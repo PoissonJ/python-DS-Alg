@@ -1,6 +1,6 @@
 class Node(object):
 
-    def __init__(self, object):
+    def __init__(self, data):
         self.data = data
         self.leftChild = None
         self.rightChild = None
@@ -26,21 +26,21 @@ class Node(object):
                 self.rightChild.remove(data, self)
         else:
             if self.leftChild is not None and self.rightChild is not None:
-                self.data = self.rightChild.getMin()
+                # successor swap instead of predeccessor swap
+                self.data = self.rightChild.getMin() # min right child is successor
                 self.rightChild.remove(self.data, self)
             elif parentNode.leftChild == self:
                 if self.leftChild is not None:
                     tempNode = self.leftChild
                 else:
                     tempNode = self.rightChild
-
                 parentNode.leftChild = tempNode
+
             elif parentNode.rightChild == self:
                 if self.leftChild is not None:
                     tempNode = self.leftChild
                 else:
                     tempNode = self.rightChild
-
                 parentNode.rightChild = tempNode
 
     def getMin(self):

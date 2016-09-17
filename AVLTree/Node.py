@@ -19,6 +19,7 @@ class Node(object):
             else:
                 self.rightChild.insert(data, parentNode)
 
+        print 'returning parent Node of {}'.format(parentNode.data)
         return parentNode
 
     def traverseInOrder(self):

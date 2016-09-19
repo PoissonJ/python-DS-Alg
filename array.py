@@ -21,3 +21,6 @@ print(nums)
 nums[0] = 100
 
 print(nums)
+
+print 'lambda test \n'
+print map(lambda n: n + 1, nums)

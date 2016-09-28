@@ -61,3 +61,16 @@ class LinkedList(object):
                 self.head = self.head.nextNode
             else:
                 self.head.remove(data, self.head)
+
+    def reverse(self, currentNode=None):
+      if not currentNode: currentNode = self.head
+      # Exit case
+      if currentNode.nextNode is None:
+        self.head = currentNode
+        return
+
+      # Recursion
+      self.reverse(currentNode = currentNode.nextNode)
+
+      currentNode.nextNode.nextNode = currentNode
+      currentNode.nextNode = None

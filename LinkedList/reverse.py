@@ -13,6 +13,7 @@ linkedList.insertEnd(51)
 linkedList.insertEnd(2)
 linkedList.insertEnd(300)
 linkedList.insertEnd(9)
+linkedList.insertEnd('hello')
 
 linkedList.traverseList()
 

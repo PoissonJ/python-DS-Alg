@@ -62,6 +62,7 @@ class LinkedList(object):
             else:
                 self.head.remove(data, self.head)
 
+    # O(N)
     def reverse(self, currentNode=None):
       if not currentNode: currentNode = self.head
       # Exit case

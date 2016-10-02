@@ -23,9 +23,11 @@ class TST(object):
 
     # we have a match but the entire key has not been used yet
     elif  index < len(key) - 1:
+      node.num += 1
       node.middleNode = self.putItem(node.middleNode, key, value, index + 1)
 
     else:
+      node.num += 1
       node.value = value
 
     return node
@@ -54,3 +56,24 @@ class TST(object):
       return self.getItem(node.middleNode, key, index + 1)
     else:
       return node
+
+  def getItemNum(self, node, key, index):
+
+    if node == None:
+      return 0
+
+    c = key[index]
+
+    if c < node.character:
+      return self.getItemNum(node.leftNode, key, index)
+    elif c > node.character:
+      return self.getItemNum(node.rightNode, key, index)
+    elif index < len(key) - 1:
+      return self.getItemNum(node.middleNode, key, index + 1)
+    else:
+      return node.num
+
+  def getNumberOfSimilar(self, searchTerm):
+    """Gets the number of entries that start with the given search term"""
+    ans = self.getItemNum(self.rootNode, searchTerm, 0)
+    return ans

@@ -6,3 +6,4 @@ class Node(object):
     self.middleNode = None
     self.rightNode = None
     self.value = None
+    self.num = 0

@@ -19,7 +19,7 @@ def permutations(string, step = 0):
 
 count_obj = Counter()
 
-str = ':)'
+str = 'abc'
 permutations(str)
 
 print count_obj.getCount()
